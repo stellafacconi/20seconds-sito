@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>20 Seconds</title>
+<meta name="description" content="20 Seconds is a print-only magazine for experimental music and art.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ctext x='16' y='23' font-family='Helvetica,Arial' font-size='17' font-weight='800' fill='%23fdff35' text-anchor='middle'%3E20S%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="hd" id="hd">
+  <div class="hd__top">
+    <a class="logo" href="#/" aria-label="20 Seconds — home">20<b>S</b></a>
+    <div class="hd__tools">
+      <button class="sq" id="btnSearch" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l6.5 6.5"/></svg>
+      </button>
+      <div class="lang">
+        <button class="sq" id="btnLang" aria-label="Language" aria-haspopup="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3zM4.5 7.5h15M4.5 16.5h15"/></svg>
+        </button>
+        <ul class="lang__menu" id="langMenu"></ul>
+      </div>
+      <button class="cartbtn" id="btnCart">CART (0)</button>
+    </div>
+  </div>
+  <nav class="nav" id="nav" aria-label="Main"></nav>
+  <a class="ticker" id="ticker"><div class="ticker__track"></div></a>
+</header>
+
+<main id="app"></main>
+<footer class="ft" id="ft"></footer>
+
+<div class="player" id="player">
+  <span class="player__dot"></span>
+  <span class="player__title" id="plTitle"></span>
+  <button class="player__btn" id="plBtn" aria-label="Play">
+    <svg class="i-play" viewBox="0 0 24 24"><path d="M4 2l18 10L4 22z"/></svg>
+    <svg class="i-pause" viewBox="0 0 24 24"><path d="M4 2h6v20H4zM14 2h6v20h-6z"/></svg>
+  </button>
+  <div class="player__bar" id="plBar" role="slider" aria-label="Progress" tabindex="0"><i id="plFill"></i></div>
+  <span class="player__date" id="plDate"></span>
+</div>
+
+<div class="search" id="search" role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search__top">
+    <input id="q" type="search" placeholder="search.." autocomplete="off" spellcheck="false">
+    <button class="search__x" id="searchX" aria-label="Close">×</button>
+  </div>
+  <div class="search__bar" id="sBar"></div>
+  <div class="search__body">
+    <ul class="search__sug" id="sug"></ul>
+    <div class="search__res" id="res"></div>
+  </div>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="cart" id="cart" aria-label="Cart">
+  <div class="cart__hd"><span id="cartTitle">CART (0)</span><button id="cartX">CLOSE</button></div>
+  <ul class="cart__lines" id="cartLines"></ul>
+  <div class="cart__ft">
+    <div class="cart__row"><span id="cartSubL">SUBTOTAL</span><span id="cartSub">€0.00</span></div>
+    <p class="cart__note" id="cartNote"></p>
+    <button class="btn btn--full" id="checkout">CHECKOUT</button>
+  </div>
+</aside>
+<div class="toast" id="toast"></div>
+
+<script src="assets/data.js"></script>
+<script src="assets/art.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/comments.js"></script>
+</body>
+</html>
